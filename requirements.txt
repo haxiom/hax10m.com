@@ -1,0 +1,16 @@
+Django==1.4.3
+South==0.7.6
+argparse==1.2.1
+boto==2.8.0
+dj-database-url==0.2.1
+django-classy-tags==0.4
+django-cms==2.3.5
+django-mptt==0.5.2
+django-registration==0.8
+django-sekizai==0.7
+django-storages==1.1.6
+gunicorn==0.17.2
+html5lib==0.95
+psycopg2==2.4.6
+wsgiref==0.1.2
+PIL==1.1.7

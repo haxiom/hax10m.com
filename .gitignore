@@ -1,0 +1,7 @@
+*.pyc
+.env
+*.db
+venv/
+*.swp
+.DS_Store
+migrations/
