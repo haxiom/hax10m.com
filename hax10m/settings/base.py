@@ -81,7 +81,7 @@ STATICFILES_FINDERS = {
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = "development_secret_key"
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
