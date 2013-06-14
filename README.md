@@ -29,6 +29,7 @@ $ python manage.py migrate --fake
 $ python manage.py runserver
 ```
 
+### Deployment on Heroku
 If you want to deploy to Heroku, start off by signing up for a Heroku account: https://id.heroku.com/signup and then download the Heroku toolbelt: http://devcenter.heroku.com/articles/quickstart.
 
 Once you have the Heroku tools setup follow these steps to deploy.
