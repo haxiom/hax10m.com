@@ -3,45 +3,62 @@ hax10m.com
 
 This is the source code for hax10m.com. The site currently runs on Django and uses Django-cms and is configured for deployment on Heroku.
 
-Follow these steps if you want to deploy a copy of this site on Heroku.
+### Initial setup
 
-1. Clone this repository
+```bash
+## Clone this repository
+$ git clone git://github.com/menglewis/hax10m.com.git
 
-    $ git clone git://github.com/menglewis/hax10m.com.git
+## Enter the project root
+$ cd hax10m.com
 
-2. Sign-Up for a Heroku account. https://api.heroku.com/signup
+## Setup virtualenv
+$ virtualenv venv
 
-3. Install the Heroku client. http://devcenter.heroku.com/articles/quickstart
+## Activate virtualenv
+$ source venv/bin/activate
 
-4. Login to Heroku on your Heroku toolbelt
+## Install dependencies
+$ pip install -r requirements.txt
 
-    $ heroku login
+## Setup the database and run initial migrations
+$ python manage.py syncdb --all
+$ python manage.py migrate --fake
 
-5. Create your Heroku application
+## Run the local server
+$ python manage.py runserver
+```
 
-    $ heroku create --stack cedar
+If you want to deploy to Heroku, start off by signing up for a Heroku account: https://id.heroku.com/signup and then download the Heroku toolbelt: http://devcenter.heroku.com/articles/quickstart.
 
-6. Push the code to Heroku
+Once you have the Heroku tools setup follow these steps to deploy.
 
-    $ git push heroku master
+```bash
+## Login to Heroku
+$ heroku login
 
-7. Set your Django Secret key in the Heroku environment
+## Create a new Heroku application
+$ heroku create --stack cedar
 
-    $ heroku config:add SECRET_KEY=enter_a_secret_key_here
+## Push your code to Heroku
+$ git push heroku master
 
-8. Sync the database and create an admin account
+## Set your Django Secret Key in the Heroku environment
+$ heroku config:add SECRET_KEY=enter_a_secret_key_here
 
-    $ heroku run python manage.py syncdb --all
+## Set Django Settings to point to Production Settings
+$ heroku config:set DJANGO_SETTINGS_MODULE=hax10m.settings.production
 
-9. Run database migrations
+## Sync the database and create an admin account
+$ heroku run python manage.py syncdb --all
 
-    $ heroku run python manage.py migrate --fake
+## Run database migrations
+$ heroku run python manage.py migrate --fake
 
-10. (Optional) Rename your heroku application
+## (Optional) Rename your heroku application
+$ heroku apps:rename NEWNAME
 
-    $ heroku apps:rename NEWNAME
-
-11. Open your Heroku application in the browser and have fun!
-
-    $ heroku open
+## Open your Heroku application in the browser and have fun!
+$ heroku open
+```
 
