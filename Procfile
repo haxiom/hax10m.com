@@ -1,1 +1,1 @@
-web: gunicorn hax10m.wsgi
+web: python manage.py run_gunicorn -b "0.0.0.0:$PORT" -w 3
