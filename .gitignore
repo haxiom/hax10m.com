@@ -5,3 +5,4 @@ venv/
 *.swp
 .DS_Store
 migrations/
+collected_static/
