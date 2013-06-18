@@ -121,6 +121,12 @@ TEMPLATE_DIRS = (
     root("templates"),
 )
 
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda o: "/",
+}
+
+LOGIN_REDIRECT_URL = "/"
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
