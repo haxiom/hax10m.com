@@ -7,7 +7,7 @@ This is the source code for hax10m.com. The site currently runs on Django and us
 
 ```bash
 ## Clone this repository
-$ git clone git://github.com/menglewis/hax10m.com.git
+$ git clone git://github.com/haxiom/hax10m.com.git
 
 ## Enter the project root
 $ cd hax10m.com
