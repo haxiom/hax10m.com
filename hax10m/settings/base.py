@@ -112,7 +112,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 CMS_TEMPLATES = (
     #('example.html', 'Example Template'),
-    ('simple_bootstrap.html', 'Simple_Bootstrap'),
+    ('hax10m/simple_bootstrap.html', 'Simple_Bootstrap'),
 )
 
 ROOT_URLCONF = 'hax10m.urls'
