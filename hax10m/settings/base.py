@@ -1,12 +1,6 @@
 import os
-from os.path import join, abspath, dirname
 
-
-here = lambda *x: join(abspath(dirname(__file__)), *x)
-PROJECT_ROOT = here("..", "..")
-root = lambda *x: join(abspath(PROJECT_ROOT), *x)
-
-
+PROJECT_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', '..')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -18,7 +12,7 @@ ADMINS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': join(PROJECT_ROOT, 'haxiom.db'),
+        'NAME': os.path.join(PROJECT_PATH, 'haxiom.db'),
     }
 }
 
@@ -52,9 +46,9 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = root("media")
+MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
 
-STATIC_ROOT = root("collected_static")
+STATIC_ROOT = os.path.join(PROJECT_PATH, "collected_static")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -67,7 +61,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    root("static"),
+    os.path.join(PROJECT_PATH, "static"),
 )
 
 STATICFILES_FINDERS = {
@@ -113,12 +107,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 CMS_TEMPLATES = (
     #('example.html', 'Example Template'),
     ('hax10m/simple_bootstrap.html', 'Simple_Bootstrap'),
+    ('hax10m/1_3_split.html', '1 3 Split'),
+    ('hax10m/hero_3_wells.html', 'Hero'),
+
 )
 
 ROOT_URLCONF = 'hax10m.urls'
 
 TEMPLATE_DIRS = (
-    root("templates"),
+    os.path.join(PROJECT_PATH, "templates"),
 )
 
 ABSOLUTE_URL_OVERRIDES = {

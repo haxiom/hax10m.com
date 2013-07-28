@@ -6,9 +6,14 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="span12">
-        {% placeholder main_container %}
-    </div>
+	<div class="row">
+	    <div class="span3">
+	        {% placeholder top_left %}
+	    </div>
+	    <div class="span9">
+	        {% placeholder top_right %}
+	    </div>
+	</div>
 
 {% endblock content %}
 
