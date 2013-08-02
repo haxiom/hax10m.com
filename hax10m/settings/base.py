@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     'cms.plugins.googlemap',
     'sekizai',
     'registration',
+    'nav_menu',
 )
 
 
